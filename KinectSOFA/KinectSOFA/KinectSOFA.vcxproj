@@ -14,10 +14,9 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -31,8 +30,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+	<GenerateManifest>true</GenerateManifest>
   </PropertyGroup>
-
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <AdditionalOptions> /bigobj %(AdditionalOptions)</AdditionalOptions>
@@ -85,7 +84,7 @@
     <CustomBuild Include="%SOFA_src%\applications\tutorials\oneTetrahedron\CMakeLists.txt">
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule %SOFA_src%/applications/tutorials/oneTetrahedron/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
-C:\Program Files (x86)\CMake\bin\cmake.exe -H%SOFA_src% -B%SOFA_build% --check-stamp-file %SOFA_build%\applications\tutorials\oneTetrahedron\CMakeFiles\generate.stamp
+cmake.exe -H%SOFA_src% -B%SOFA_build% --check-stamp-file %SOFA_build%\applications\tutorials\oneTetrahedron\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -99,190 +98,188 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\glut.cpp" />
-    <ClCompile Include="..\main.txt" />
     <ClCompile Include="..\oneTetrahedron.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="%SOFA_build%/extlibs/QGLViewer/QGLViewer.vcxproj">
-      <Project>31BF848D-613C-4F6A-A7A5-D8C19EF2E044</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/extlibs/QGLViewer/QGLViewer.vcxproj">
+      <Project>4753B2CB-7E49-4A10-9727-226B53BD6183</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaBase/SofaBaseAnimationLoop/SofaBaseAnimationLoop.vcxproj">
-      <Project>47259E2C-6CC2-4ABF-A846-C8E23A3F6B0D</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaBase/SofaBaseAnimationLoop/SofaBaseAnimationLoop.vcxproj">
+      <Project>1D3E46D8-0D47-4FC8-A882-DDF5D3E11B8A</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaBase/SofaBaseCollision/SofaBaseCollision.vcxproj">
-      <Project>6732D91D-9E43-4F79-94FC-DED04A998034</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaBase/SofaBaseCollision/SofaBaseCollision.vcxproj">
+      <Project>7C6A8077-6AE3-4C63-9A17-313B23E734EC</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaBase/SofaBaseLinearSolver/SofaBaseLinearSolver.vcxproj">
-      <Project>7B2D6665-AE6E-4C2A-8FF1-89A533E63278</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaBase/SofaBaseLinearSolver/SofaBaseLinearSolver.vcxproj">
+      <Project>2AE7FCCB-CFC9-486B-91FC-894C5F4E20F2</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaBase/SofaBaseMechanics/SofaBaseMechanics.vcxproj">
-      <Project>65C11926-C4AA-40D8-8846-217320F0FC59</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaBase/SofaBaseMechanics/SofaBaseMechanics.vcxproj">
+      <Project>C940F059-D345-4C6A-947A-97C871DE09C6</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaBase/SofaBaseTopology/SofaBaseTopology.vcxproj">
-      <Project>BB99A807-3DD8-4B74-A4A9-1ED724F1B509</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaBase/SofaBaseTopology/SofaBaseTopology.vcxproj">
+      <Project>35ABEF3F-95D0-4960-A174-E8985AE557FF</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaBase/SofaBaseVisual/SofaBaseVisual.vcxproj">
-      <Project>B6FAD561-D57B-4F1A-A21F-BA464CB988F0</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaBase/SofaBaseVisual/SofaBaseVisual.vcxproj">
+      <Project>3DEAF610-5F5F-4051-89A0-13D778BA5108</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaBoundaryCondition/SofaBoundaryCondition.vcxproj">
-      <Project>ACD45B3C-F142-4182-8973-47EBC628DB9E</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaGeneral/SofaBoundaryCondition/SofaBoundaryCondition.vcxproj">
+      <Project>B5B3B9A1-E938-449C-B7AA-730822674DA3</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaAdvanced/SofaComponentAdvanced/SofaComponentAdvanced.vcxproj">
-      <Project>0487C940-E054-4D9F-87B0-266A8C9762BE</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaAdvanced/SofaComponentAdvanced/SofaComponentAdvanced.vcxproj">
+      <Project>C6E18A89-033E-46A3-B540-34F273944C47</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaBase/SofaComponentBase/SofaComponentBase.vcxproj">
-      <Project>CD104D53-FE39-46D7-A9E3-47D49EAE75AE</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaBase/SofaComponentBase/SofaComponentBase.vcxproj">
+      <Project>4A5DA0A1-EF00-4EB1-B1B8-A6FBE73880F5</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaCommon/SofaComponentCommon/SofaComponentCommon.vcxproj">
-      <Project>1836ACA0-3785-4949-96DC-95875A07FB10</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaCommon/SofaComponentCommon/SofaComponentCommon.vcxproj">
+      <Project>34DC604B-32C3-4014-9119-B01BC6B3367D</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaComponentGeneral/SofaComponentGeneral.vcxproj">
-      <Project>A83DC024-D724-4B94-9CC1-646B36BAC48B</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaGeneral/SofaComponentGeneral/SofaComponentGeneral.vcxproj">
+      <Project>3229C4D4-3A4C-4A73-915D-4E0830E1DD8F</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaMisc/SofaComponentMisc/SofaComponentMisc.vcxproj">
-      <Project>D99B112E-98B0-4775-A3FA-E4254353A939</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaMisc/SofaComponentMisc/SofaComponentMisc.vcxproj">
+      <Project>7325CD03-2136-4EE4-8E78-752315C72261</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaConstraint/SofaConstraint.vcxproj">
-      <Project>C7755D5F-87FF-4967-B133-5301199E8A8A</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaGeneral/SofaConstraint/SofaConstraint.vcxproj">
+      <Project>38B32123-1167-4FA3-94D2-B86EEA9189A0</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaFramework/SofaCore/SofaCore.vcxproj">
-      <Project>597098F7-9382-4080-BB10-EF54BEB06E7A</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaFramework/SofaCore/SofaCore.vcxproj">
+      <Project>0C160E06-E9FC-424F-8808-204EC6FAAD2B</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaFramework/SofaDefaultType/SofaDefaultType.vcxproj">
-      <Project>90BFCAB3-35F5-4F26-B9B7-59221EF95105</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaFramework/SofaDefaultType/SofaDefaultType.vcxproj">
+      <Project>09E7AE8D-5ABC-4E98-B13C-3153FA9DCEF6</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaCommon/SofaDeformable/SofaDeformable.vcxproj">
-      <Project>BA1ABC25-59E1-4A93-BC7A-880471BED9DD</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaCommon/SofaDeformable/SofaDeformable.vcxproj">
+      <Project>2FC01F82-C16A-4ADF-977D-EB8695026B80</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaDenseSolver/SofaDenseSolver.vcxproj">
-      <Project>29240C6A-5A46-45EB-819E-9DA6C42E8A18</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaGeneral/SofaDenseSolver/SofaDenseSolver.vcxproj">
+      <Project>C14EECA9-DD26-4A9E-9AC3-92CDBD735598</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaEigen2Solver/SofaEigen2Solver.vcxproj">
-      <Project>EA408616-10D6-46CF-96F2-1B48FE371C8A</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaGeneral/SofaEigen2Solver/SofaEigen2Solver.vcxproj">
+      <Project>23EA139A-1C3C-46E6-93BF-F1F4CE0954C4</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaEngine/SofaEngine.vcxproj">
-      <Project>21A537BC-48F7-4605-B393-489B6182A7E5</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaGeneral/SofaEngine/SofaEngine.vcxproj">
+      <Project>6B983828-A194-479C-BBB4-E84A2B4A51FE</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaAdvanced/SofaEulerianFluid/SofaEulerianFluid.vcxproj">
-      <Project>00500660-4501-4852-A0D9-125A6B2DF6DA</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaAdvanced/SofaEulerianFluid/SofaEulerianFluid.vcxproj">
+      <Project>7597FBAC-F7F1-40A4-ABCB-129BFC556333</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaCommon/SofaExplicitOdeSolver/SofaExplicitOdeSolver.vcxproj">
-      <Project>DDA31FD3-2C30-4C87-9D4D-68B455F35584</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaCommon/SofaExplicitOdeSolver/SofaExplicitOdeSolver.vcxproj">
+      <Project>71B4FAAF-681F-43B1-AE82-527B6EDBE0EE</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaExporter/SofaExporter.vcxproj">
-      <Project>68F33F89-8A75-44F9-9671-6E41CA7FED70</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaGeneral/SofaExporter/SofaExporter.vcxproj">
+      <Project>3654AD3D-5DFC-4DAC-B87D-D4DF63172F1F</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaGraphComponent/SofaGraphComponent.vcxproj">
-      <Project>E2BCDB90-9C80-4722-A820-97DEE13CAA0F</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaGeneral/SofaGraphComponent/SofaGraphComponent.vcxproj">
+      <Project>D7A7C1CB-5DE0-4A25-A718-04A74E12B229</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaGui/SofaGuiCommon/SofaGuiCommon.vcxproj">
-      <Project>688254AF-8C91-4037-A165-29DDCC85DB6A</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaGui/SofaGuiCommon/SofaGuiCommon.vcxproj">
+      <Project>D13CCA80-69A5-44EE-839E-B568D2A49623</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaGui/SofaGuiGlut/SofaGuiGlut.vcxproj">
-      <Project>B7FEBDD8-8738-4B16-9500-C0364415476B</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaGui/SofaGuiGlut/SofaGuiGlut.vcxproj">
+      <Project>9AEF9340-91A8-4536-BD56-ACA84D837193</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaGui/SofaGuiMain/SofaGuiMain.vcxproj">
-      <Project>013118A1-6727-4372-837A-EBFFB874AE32</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaGui/SofaGuiMain/SofaGuiMain.vcxproj">
+      <Project>50375418-4A29-4DD7-87F8-822F3B99E81C</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaGui/SofaGuiQt/SofaGuiQt.vcxproj">
-      <Project>C2D4FF27-F148-46B5-96A6-F93DA4DA3EA0</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaGui/SofaGuiQt/SofaGuiQt.vcxproj">
+      <Project>6F13A997-A6D6-4471-9F32-8839EF3C8C32</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaHaptics/SofaHaptics.vcxproj">
-      <Project>4914818A-0C3E-4FA8-97D9-C4C997BCFCB0</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaGeneral/SofaHaptics/SofaHaptics.vcxproj">
+      <Project>358A1883-7DB7-4B6F-9101-A6374A79F4F2</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaFramework/SofaHelper/SofaHelper.vcxproj">
-      <Project>74EB09EB-6BD7-4D3B-A37C-1F19C5BE5B00</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaFramework/SofaHelper/SofaHelper.vcxproj">
+      <Project>1B4EE082-07A4-4698-ACE2-A824D8B3C761</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaCommon/SofaImplicitOdeSolver/SofaImplicitOdeSolver.vcxproj">
-      <Project>25904811-042D-47AC-8F6F-FB5437DB95D1</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaCommon/SofaImplicitOdeSolver/SofaImplicitOdeSolver.vcxproj">
+      <Project>02D06FEA-70BC-45CA-BE2D-7255546E4591</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaCommon/SofaLoader/SofaLoader.vcxproj">
-      <Project>E918604B-4802-46D2-A5D1-4A789106889E</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaCommon/SofaLoader/SofaLoader.vcxproj">
+      <Project>58F24DAC-21E3-49E5-9862-EF1420EA9E88</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaCommon/SofaMeshCollision/SofaMeshCollision.vcxproj">
-      <Project>D3E5D649-741B-4B61-B350-B8905C0FD1F3</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaCommon/SofaMeshCollision/SofaMeshCollision.vcxproj">
+      <Project>48F78D3C-70EC-453C-B033-ECBDB4C4DA66</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaMisc/SofaMisc/SofaMisc.vcxproj">
-      <Project>D3FD4FE7-5113-4221-9ACD-815087536494</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaMisc/SofaMisc/SofaMisc.vcxproj">
+      <Project>C4B3CAB6-9514-419D-AB53-193855F65E89</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaMisc/SofaMiscCollision/SofaMiscCollision.vcxproj">
-      <Project>47A28710-C10B-41A9-A1D6-6D11486C38E4</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaMisc/SofaMiscCollision/SofaMiscCollision.vcxproj">
+      <Project>1660C757-96A0-45C5-949D-B2185D8E3839</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaMisc/SofaMiscEngine/SofaMiscEngine.vcxproj">
-      <Project>B2B1247B-9437-4FAF-B300-1E8B11B52E22</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaMisc/SofaMiscEngine/SofaMiscEngine.vcxproj">
+      <Project>B5479381-4C93-45C0-AA8D-A49F5F11DF66</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaMisc/SofaMiscFem/SofaMiscFem.vcxproj">
-      <Project>A5E74051-6FC6-4F0F-9D37-D57E26CAB980</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaMisc/SofaMiscFem/SofaMiscFem.vcxproj">
+      <Project>D6F087B0-CB6F-4030-88FC-DCB622CDD0E9</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaMisc/SofaMiscForceField/SofaMiscForceField.vcxproj">
-      <Project>BEDD8C5B-51FB-494E-A046-F2D4A4A1E0BF</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaMisc/SofaMiscForceField/SofaMiscForceField.vcxproj">
+      <Project>ACD6CC91-47CD-4E9E-8FB4-F12ABB61A78B</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaMisc/SofaMiscMapping/SofaMiscMapping.vcxproj">
-      <Project>6A232E44-FA9A-4A4C-86AC-616C3C2BCAB8</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaMisc/SofaMiscMapping/SofaMiscMapping.vcxproj">
+      <Project>F15FC387-5FD4-4E3E-8A08-3ECDDF68D0D0</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaMisc/SofaMiscSolver/SofaMiscSolver.vcxproj">
-      <Project>380EEA8A-64DD-445E-9840-A5B26E98F1E8</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaMisc/SofaMiscSolver/SofaMiscSolver.vcxproj">
+      <Project>C810E8CC-E019-4913-84C9-5D4A6040ECD2</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaMisc/SofaMiscTopology/SofaMiscTopology.vcxproj">
-      <Project>48F18CE6-6CEB-4083-B646-6394335A3B89</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaMisc/SofaMiscTopology/SofaMiscTopology.vcxproj">
+      <Project>CA8FDA17-26D5-4404-81A8-DF78BADE8AC6</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaAdvanced/SofaNonUniformFem/SofaNonUniformFem.vcxproj">
-      <Project>6EB3FA88-99E2-45D7-8183-E5BFDFA908D0</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaAdvanced/SofaNonUniformFem/SofaNonUniformFem.vcxproj">
+      <Project>1768B711-FCD2-4BB8-B35A-B41A9FC0E886</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaCommon/SofaObjectInteraction/SofaObjectInteraction.vcxproj">
-      <Project>30D7CB2D-8385-42C5-83EC-7BD1CC2C00D4</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaCommon/SofaObjectInteraction/SofaObjectInteraction.vcxproj">
+      <Project>CDD39647-2136-4B4B-BF34-B3E7A350B366</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaOpenglVisual/SofaOpenglVisual.vcxproj">
-      <Project>F6B4BFA6-D1F0-4724-A1E7-68998395A309</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaGeneral/SofaOpenglVisual/SofaOpenglVisual.vcxproj">
+      <Project>63E90501-3C96-48EA-BA78-46D935557D6D</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaPreconditioner/SofaPreconditioner.vcxproj">
-      <Project>70DC8B20-A256-4A6B-9D18-52F6DEEA9030</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaGeneral/SofaPreconditioner/SofaPreconditioner.vcxproj">
+      <Project>1E0B3A8D-B105-4621-80AE-96AF401E6A64</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaCommon/SofaRigid/SofaRigid.vcxproj">
-      <Project>69D83B3D-91C0-4DBE-A142-0A8C1EB62267</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaCommon/SofaRigid/SofaRigid.vcxproj">
+      <Project>9FC5B794-D2F5-4A5F-99A1-D95E01039A94</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaCommon/SofaSimpleFem/SofaSimpleFem.vcxproj">
-      <Project>DF70C10C-CAB1-444E-A46E-33BD387FDA25</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaCommon/SofaSimpleFem/SofaSimpleFem.vcxproj">
+      <Project>9B55CC3B-80D1-424A-8E44-2027BE1977A7</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaSimulation/SofaSimulationCommon/SofaSimulationCommon.vcxproj">
-      <Project>ADF79CE9-0DE4-402A-8B19-AA6A6EA8EDDA</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaSimulation/SofaSimulationCommon/SofaSimulationCommon.vcxproj">
+      <Project>97B9E25C-B9BA-438E-AC60-DD156D243FFB</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaSimulation/SofaSimulationTree/SofaSimulationTree.vcxproj">
-      <Project>D7A9E8A2-DADE-4848-990C-D0FEE9D5DCFD</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaSimulation/SofaSimulationTree/SofaSimulationTree.vcxproj">
+      <Project>F24F56ED-1DC5-41F7-9E4C-E2BCD2421F66</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaSparseSolver/SofaSparseSolver.vcxproj">
-      <Project>C92E4562-35CA-4E39-AD01-AF28D45CB073</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaGeneral/SofaSparseSolver/SofaSparseSolver.vcxproj">
+      <Project>137639F1-9242-485E-B9F5-4AEBD0EA0F93</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaAdvanced/SofaSphFluid/SofaSphFluid.vcxproj">
-      <Project>CB1952D3-8087-4483-A636-2B37A2CD64F8</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaAdvanced/SofaSphFluid/SofaSphFluid.vcxproj">
+      <Project>B05DBF78-9744-481E-B434-1F9162BFC056</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaTopologyMapping/SofaTopologyMapping.vcxproj">
-      <Project>63C8D4BB-5E17-4598-9D54-4A3E46F8CF5E</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaGeneral/SofaTopologyMapping/SofaTopologyMapping.vcxproj">
+      <Project>F8AC8B97-4FC6-4B32-B8FD-854F5D700FDA</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaUserInteraction/SofaUserInteraction.vcxproj">
-      <Project>0DFCD5F2-CABC-4A45-9F00-E26F38F2B45B</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaGeneral/SofaUserInteraction/SofaUserInteraction.vcxproj">
+      <Project>9E0AF3B2-6636-4825-8677-2179BF51E364</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaValidation/SofaValidation.vcxproj">
-      <Project>E87570B1-A5DB-45B7-88BB-50B4E0E25D32</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaGeneral/SofaValidation/SofaValidation.vcxproj">
+      <Project>AAE31E2B-1658-4248-B5B9-A1EDA088FE6D</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/SofaAdvanced/SofaVolumetricData/SofaVolumetricData.vcxproj">
-      <Project>97BA6167-136E-45A4-8D17-03A67A44F8D2</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/SofaAdvanced/SofaVolumetricData/SofaVolumetricData.vcxproj">
+      <Project>C1B04D5A-6F09-4909-8B08-958D9E8794BE</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/ZERO_CHECK.vcxproj">
-      <Project>4B331207-60BB-4CA8-9016-E7F731F54BF8</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/ZERO_CHECK.vcxproj">
+      <Project>24BDC193-8F2B-43C1-9D61-E9696C46EF55</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/extlibs/csparse/csparse.vcxproj">
-      <Project>F3F2DFC0-3284-4F10-82E4-04D7A7784A1D</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/extlibs/csparse/csparse.vcxproj">
+      <Project>EA1D8693-D9C9-4FC9-942F-52569494E8EC</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/extlibs/miniFlowVR/miniFlowVR.vcxproj">
-      <Project>41B67F44-74BB-4502-A4C1-CBEE4A6E3464</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/extlibs/miniFlowVR/miniFlowVR.vcxproj">
+      <Project>4CB25D42-0466-4DBE-A285-01B4ADAB1FC7</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/extlibs/newmat/newmat.vcxproj">
-      <Project>4BE744EA-28A2-4F9E-AEFD-732D85E3F89C</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/extlibs/newmat/newmat.vcxproj">
+      <Project>7D01A77F-D6A3-42A6-A49D-107C29690697</Project>
     </ProjectReference>
-    <ProjectReference Include="%SOFA_build%/extlibs/tinyxml/tinyxml.vcxproj">
-      <Project>B8171694-A8B2-40BC-97AA-E884D1656E90</Project>
+    <ProjectReference Include="D:/research/AR/SOFA/sofa_build/extlibs/tinyxml/tinyxml.vcxproj">
+      <Project>274D66E1-9FB4-4195-931B-5EF2BAC89567</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -15,17 +15,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\glut.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\oneTetrahedron.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main.txt">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\Research\SOFA\sofa\v15.12\src\applications\tutorials\oneTetrahedron\CMakeLists.txt" />
+    <CustomBuild Include="%SOFA_src%\applications\tutorials\oneTetrahedron\CMakeLists.txt" />
   </ItemGroup>
 </Project>

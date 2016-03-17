@@ -1,5 +1,12 @@
-﻿Build started 2016/3/17 0:05:21.
+﻿Build started 17/03/2016 14:17:48.
+     1>Project "D:\research\AR\KinectSOFA\KinectSOFA\KinectSOFA\KinectSOFA.vcxproj" on node 2 (Build target(s)).
+     1>CustomBuild:
+         Building Custom Rule D:\research\AR\SOFA\sofa\v15.12\src/applications/tutorials/oneTetrahedron/CMakeLists.txt
+         CMake does not need to re-run because D:\research\AR\SOFA\sofa_build\applications\tutorials\oneTetrahedron\CMakeFiles\generate.stamp is up-to-date.
+       Link:
+         KinectSOFA.vcxproj -> D:\research\AR\KinectSOFA\KinectSOFA\Release\KinectSOFA.exe
+     1>Done Building Project "D:\research\AR\KinectSOFA\KinectSOFA\KinectSOFA\KinectSOFA.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.07
+Time Elapsed 00:00:01.28
