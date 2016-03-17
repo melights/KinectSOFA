@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug|Win32">
-      <Configuration>Debug</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
@@ -16,12 +12,6 @@
     <RootNamespace>KinectSOFA</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
@@ -31,9 +21,6 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -45,51 +32,258 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>D:\Research\Dependency\freeglut\include;$(KINECTSDK10_DIR)\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(KINECTSDK10_DIR)\lib\x86;D:\Research\Dependency\freeglut\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>kinect10.lib;glut32.lib;freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Link>
-  </ItemDefinitionGroup>
+
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
+      <AdditionalOptions> /bigobj %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(KINECTSDK10_DIR)\inc;..\;%SOFA_build%\include;%SOFA_src%\SofaGui\..\applications;%SOFA_src%\SofaGeneral\..\modules;%SOFA_src%\SofaSimulation\..\modules;%SOFA_src%\framework\sofa\core\..\..;%SOFA_src%\framework\sofa\defaulttype\..\..;%SOFA_src%\framework\sofa\helper\..\..;%SOFA_src%\include;%SOFA_src%\extlibs\miniBoost;%SOFA_src%\extlibs\eigen-3.2.7;%SOFA_build%\SofaFramework;%SOFA_src%\extlibs\tinyxml;%SOFA_src%\SofaBase\..\modules;%SOFA_src%\SofaCommon\..\modules;%SOFA_src%\extlibs\csparse;%SOFA_src%\extlibs\newmat;%SOFA_src%\SofaAdvanced\..\modules;%SOFA_src%\extlibs\miniFlowVR\include;%SOFA_src%\SofaMisc\..\modules;%SOFA_build%\SofaGui\SofaGuiQt;%SOFA_src%\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtCore;%SOFA_src%\qt4.8.5_msvc2012_x86\tools\qt4win\mkspecs\default;%SOFA_src%\qt4.8.5_msvc2012_x86\tools\qt4win\include;%SOFA_src%\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtGui;%SOFA_src%\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtOpenGL;%SOFA_src%\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtXml;%SOFA_src%\extlibs\libQGLViewer-2.6.3\QGLViewer\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4250;4251;4275;4675;4996</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
-      <Optimization>Disabled</Optimization>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>D:\Research\Dependency\freeglut\include;$(KINECTSDK10_DIR)\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;UNICODE;_USE_MATH_DEFINES;BOOST_ALL_DYN_LINK;EIGEN_DONT_ALIGN;QT_CORE_LIB;QT_NO_DEBUG;QT_GUI_LIB;QT_OPENGL_LIB;QT_XML_LIB;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
     </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;UNICODE;_USE_MATH_DEFINES;BOOST_ALL_DYN_LINK;EIGEN_DONT_ALIGN;QT_CORE_LIB;QT_NO_DEBUG;QT_GUI_LIB;QT_OPENGL_LIB;QT_XML_LIB;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%SOFA_build%\include;%SOFA_src%\SofaGui\..\applications;%SOFA_src%\SofaGeneral\..\modules;%SOFA_src%\SofaSimulation\..\modules;%SOFA_src%\framework\sofa\core\..\..;%SOFA_src%\framework\sofa\defaulttype\..\..;%SOFA_src%\framework\sofa\helper\..\..;%SOFA_src%\include;%SOFA_src%\extlibs\miniBoost;%SOFA_src%\extlibs\eigen-3.2.7;%SOFA_build%\SofaFramework;%SOFA_src%\extlibs\tinyxml;%SOFA_src%\SofaBase\..\modules;%SOFA_src%\SofaCommon\..\modules;%SOFA_src%\extlibs\csparse;%SOFA_src%\extlibs\newmat;%SOFA_src%\SofaAdvanced\..\modules;%SOFA_src%\extlibs\miniFlowVR\include;%SOFA_src%\SofaMisc\..\modules;%SOFA_build%\SofaGui\SofaGuiQt;%SOFA_src%\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtCore;%SOFA_src%\qt4.8.5_msvc2012_x86\tools\qt4win\mkspecs\default;%SOFA_src%\qt4.8.5_msvc2012_x86\tools\qt4win\include;%SOFA_src%\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtGui;%SOFA_src%\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtOpenGL;%SOFA_src%\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtXml;%SOFA_src%\extlibs\libQGLViewer-2.6.3\QGLViewer\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>%SOFA_build%\include;%SOFA_src%\SofaGui\..\applications;%SOFA_src%\SofaGeneral\..\modules;%SOFA_src%\SofaSimulation\..\modules;%SOFA_src%\framework\sofa\core\..\..;%SOFA_src%\framework\sofa\defaulttype\..\..;%SOFA_src%\framework\sofa\helper\..\..;%SOFA_src%\include;%SOFA_src%\extlibs\miniBoost;%SOFA_src%\extlibs\eigen-3.2.7;%SOFA_build%\SofaFramework;%SOFA_src%\extlibs\tinyxml;%SOFA_src%\SofaBase\..\modules;%SOFA_src%\SofaCommon\..\modules;%SOFA_src%\extlibs\csparse;%SOFA_src%\extlibs\newmat;%SOFA_src%\SofaAdvanced\..\modules;%SOFA_src%\extlibs\miniFlowVR\include;%SOFA_src%\SofaMisc\..\modules;%SOFA_build%\SofaGui\SofaGuiQt;%SOFA_src%\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtCore;%SOFA_src%\qt4.8.5_msvc2012_x86\tools\qt4win\mkspecs\default;%SOFA_src%\qt4.8.5_msvc2012_x86\tools\qt4win\include;%SOFA_src%\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtGui;%SOFA_src%\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtOpenGL;%SOFA_src%\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtXml;%SOFA_src%\extlibs\libQGLViewer-2.6.3\QGLViewer\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
     <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kinect10.lib;freeglut.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;%SOFA_build%\lib\Release\SofaGuiMain.lib;%SOFA_build%\lib\Release\SofaGuiGlut.lib;%SOFA_build%\lib\Release\SofaGuiQt.lib;%SOFA_build%\lib\Release\SofaGuiCommon.lib;%SOFA_build%\lib\Release\SofaComponentBase.lib;%SOFA_build%\lib\Release\SofaBaseAnimationLoop.lib;%SOFA_build%\lib\Release\SofaComponentCommon.lib;%SOFA_build%\lib\Release\SofaComponentGeneral.lib;%SOFA_build%\lib\Release\SofaEngine.lib;%SOFA_build%\lib\Release\SofaHaptics.lib;%SOFA_build%\lib\Release\SofaPreconditioner.lib;%SOFA_build%\lib\Release\SofaSparseSolver.lib;%SOFA_build%\lib\Release\csparse.lib;%SOFA_build%\lib\Release\SofaValidation.lib;%SOFA_build%\lib\Release\SofaComponentAdvanced.lib;%SOFA_build%\lib\Release\SofaEulerianFluid.lib;%SOFA_build%\lib\Release\SofaComponentMisc.lib;%SOFA_build%\lib\Release\SofaMisc.lib;%SOFA_build%\lib\Release\SofaMiscCollision.lib;%SOFA_build%\lib\Release\SofaExplicitOdeSolver.lib;%SOFA_build%\lib\Release\SofaConstraint.lib;%SOFA_build%\lib\Release\SofaImplicitOdeSolver.lib;%SOFA_build%\lib\Release\SofaSphFluid.lib;%SOFA_build%\lib\Release\SofaVolumetricData.lib;%SOFA_build%\lib\Release\SofaUserInteraction.lib;%SOFA_build%\lib\Release\SofaGraphComponent.lib;%SOFA_build%\lib\Release\SofaTopologyMapping.lib;%SOFA_build%\lib\Release\SofaMeshCollision.lib;%SOFA_build%\lib\Release\SofaBaseCollision.lib;%SOFA_build%\lib\Release\SofaObjectInteraction.lib;%SOFA_build%\lib\Release\miniFlowVR.lib;%SOFA_build%\lib\Release\SofaMiscEngine.lib;%SOFA_build%\lib\Release\SofaNonUniformFem.lib;%SOFA_build%\lib\Release\SofaDenseSolver.lib;%SOFA_build%\lib\Release\SofaMiscFem.lib;%SOFA_build%\lib\Release\newmat.lib;%SOFA_build%\lib\Release\SofaMiscMapping.lib;%SOFA_build%\lib\Release\SofaRigid.lib;%SOFA_build%\lib\Release\SofaBaseMechanics.lib;%SOFA_build%\lib\Release\SofaSimpleFem.lib;%SOFA_build%\lib\Release\SofaMiscSolver.lib;%SOFA_build%\lib\Release\SofaExporter.lib;%SOFA_build%\lib\Release\SofaLoader.lib;%SOFA_build%\lib\Release\SofaSimulationTree.lib;%SOFA_build%\lib\Release\SofaOpenglVisual.lib;%SOFA_build%\lib\Release\SofaBaseVisual.lib;%SOFA_build%\lib\Release\SofaMiscForceField.lib;%SOFA_build%\lib\Release\SofaDeformable.lib;%SOFA_build%\lib\Release\SofaBoundaryCondition.lib;%SOFA_build%\lib\Release\SofaEigen2Solver.lib;%SOFA_build%\lib\Release\SofaBaseLinearSolver.lib;%SOFA_build%\lib\Release\SofaMiscTopology.lib;%SOFA_build%\lib\Release\SofaBaseTopology.lib;%SOFA_build%\lib\Release\SofaSimulationCommon.lib;%SOFA_build%\lib\Release\SofaCore.lib;%SOFA_build%\lib\Release\SofaDefaultType.lib;%SOFA_build%\lib\Release\SofaHelper.lib;%SOFA_src%\lib\win32\glew32.lib;%SOFA_src%\lib\win32\glut32.lib;%SOFA_build%\lib\Release\tinyxml.lib;%SOFA_src%\lib\win32\zlib.lib;%SOFA_src%\lib\win32\libpng.lib;%SOFA_build%\lib\Release\QGLViewer.lib;%SOFA_src%\qt4.8.5_msvc2012_x86\tools\qt4win\lib\QtOpenGL4.lib;%SOFA_src%\qt4.8.5_msvc2012_x86\tools\qt4win\lib\QtGui4.lib;%SOFA_src%\qt4.8.5_msvc2012_x86\tools\qt4win\lib\QtXml4.lib;%SOFA_src%\qt4.8.5_msvc2012_x86\tools\qt4win\lib\QtCore4.lib;glu32.lib;opengl32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(KINECTSDK10_DIR)\lib\x86;..\GL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>%SOFA_build%/lib/Release/oneTetrahedron.lib</ImportLibrary>
+      <ProgramDataBaseFile>%SOFA_build%/bin/Release/oneTetrahedron.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>kinect10.lib;freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(KINECTSDK10_DIR)\lib\x86;D:\Research\Dependency\freeglut\lib</AdditionalLibraryDirectories>
+      <Version>
+      </Version>
     </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\glut.h" />
-    <ClInclude Include="..\main.h" />
+    <CustomBuild Include="%SOFA_src%\applications\tutorials\oneTetrahedron\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule %SOFA_src%/applications/tutorials/oneTetrahedron/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+C:\Program Files (x86)\CMake\bin\cmake.exe -H%SOFA_src% -B%SOFA_build% --check-stamp-file %SOFA_build%\applications\tutorials\oneTetrahedron\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%SOFA_src%/applications/tutorials/oneTetrahedron/CMakeLists.txt;%SOFA_src%\applications\tutorials\oneTetrahedron\CMakeLists.txt;%SOFA_build%\cmake\SofaGuiConfigVersion.cmake;%SOFA_build%\cmake\SofaGuiConfig.cmake;%SOFA_build%\cmake\SofaGeneralConfigVersion.cmake;%SOFA_build%\cmake\SofaGeneralConfig.cmake;%SOFA_build%\cmake\SofaCommonConfigVersion.cmake;%SOFA_build%\cmake\SofaCommonConfig.cmake;%SOFA_build%\cmake\SofaBaseConfigVersion.cmake;%SOFA_build%\cmake\SofaBaseConfig.cmake;%SOFA_build%\cmake\SofaSimulationConfigVersion.cmake;%SOFA_build%\cmake\SofaSimulationConfig.cmake;%SOFA_build%\cmake\SofaFrameworkConfigVersion.cmake;%SOFA_build%\cmake\SofaFrameworkConfig.cmake;%SOFA_src%\SofaFramework\SofaMacros.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakePackageConfigHelpers.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\WriteBasicConfigVersionFile.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;%SOFA_src%\SofaFramework\CMakeParseLibraryList.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;%SOFA_build%\cmake\TinyXMLConfigVersion.cmake;%SOFA_build%\cmake\TinyXMLConfig.cmake;%SOFA_build%\cmake\GTestConfigVersion.cmake;%SOFA_build%\cmake\GTestConfig.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindZLIB.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageMessage.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPNG.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindZLIB.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageMessage.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\SelectLibraryConfigurations.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageMessage.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindGLEW.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageMessage.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindGLUT.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageMessage.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;%SOFA_build%\cmake\NewmatConfigVersion.cmake;%SOFA_build%\cmake\NewmatConfig.cmake;%SOFA_build%\cmake\CSparseConfigVersion.cmake;%SOFA_build%\cmake\CSparseConfig.cmake;%SOFA_build%\cmake\SofaMiscConfigVersion.cmake;%SOFA_build%\cmake\SofaMiscConfig.cmake;%SOFA_build%\cmake\SofaAdvancedConfigVersion.cmake;%SOFA_build%\cmake\SofaAdvancedConfig.cmake;%SOFA_build%\cmake\SofaGeneralConfigVersion.cmake;%SOFA_build%\cmake\SofaGeneralConfig.cmake;%SOFA_build%\cmake\SofaCommonConfigVersion.cmake;%SOFA_build%\cmake\SofaCommonConfig.cmake;%SOFA_build%\cmake\SofaBaseConfigVersion.cmake;%SOFA_build%\cmake\SofaBaseConfig.cmake;%SOFA_build%\cmake\SofaSimulationConfigVersion.cmake;%SOFA_build%\cmake\SofaSimulationConfig.cmake;%SOFA_build%\cmake\SofaFrameworkConfigVersion.cmake;%SOFA_build%\cmake\SofaFrameworkConfig.cmake;%SOFA_src%\SofaFramework\SofaMacros.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakePackageConfigHelpers.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\WriteBasicConfigVersionFile.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;%SOFA_src%\SofaFramework\CMakeParseLibraryList.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;%SOFA_build%\cmake\TinyXMLConfigVersion.cmake;%SOFA_build%\cmake\TinyXMLConfig.cmake;%SOFA_build%\cmake\GTestConfigVersion.cmake;%SOFA_build%\cmake\GTestConfig.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindZLIB.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageMessage.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPNG.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindZLIB.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageMessage.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageMessage.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindGLEW.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageMessage.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindGLUT.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageMessage.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;%SOFA_build%\cmake\NewmatConfigVersion.cmake;%SOFA_build%\cmake\NewmatConfig.cmake;%SOFA_build%\cmake\CSparseConfigVersion.cmake;%SOFA_build%\cmake\CSparseConfig.cmake;%SOFA_build%\cmake\MiniFlowVRConfigVersion.cmake;%SOFA_build%\cmake\MiniFlowVRConfig.cmake;%SOFA_build%\cmake\SofaGeneralConfigVersion.cmake;%SOFA_build%\cmake\SofaGeneralConfig.cmake;%SOFA_build%\cmake\SofaCommonConfigVersion.cmake;%SOFA_build%\cmake\SofaCommonConfig.cmake;%SOFA_build%\cmake\SofaBaseConfigVersion.cmake;%SOFA_build%\cmake\SofaBaseConfig.cmake;%SOFA_build%\cmake\SofaSimulationConfigVersion.cmake;%SOFA_build%\cmake\SofaSimulationConfig.cmake;%SOFA_build%\cmake\SofaFrameworkConfigVersion.cmake;%SOFA_build%\cmake\SofaFrameworkConfig.cmake;%SOFA_src%\SofaFramework\SofaMacros.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakePackageConfigHelpers.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\WriteBasicConfigVersionFile.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;%SOFA_src%\SofaFramework\CMakeParseLibraryList.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;%SOFA_build%\cmake\TinyXMLConfigVersion.cmake;%SOFA_build%\cmake\TinyXMLConfig.cmake;%SOFA_build%\cmake\GTestConfigVersion.cmake;%SOFA_build%\cmake\GTestConfig.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindZLIB.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageMessage.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPNG.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindZLIB.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageMessage.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageMessage.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindGLEW.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageMessage.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindGLUT.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageMessage.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;%SOFA_build%\cmake\NewmatConfigVersion.cmake;%SOFA_build%\cmake\NewmatConfig.cmake;%SOFA_build%\cmake\CSparseConfigVersion.cmake;%SOFA_build%\cmake\CSparseConfig.cmake;%SOFA_build%\cmake\SofaAdvancedConfigVersion.cmake;%SOFA_build%\cmake\SofaAdvancedConfig.cmake;%SOFA_build%\cmake\SofaGeneralConfigVersion.cmake;%SOFA_build%\cmake\SofaGeneralConfig.cmake;%SOFA_build%\cmake\SofaCommonConfigVersion.cmake;%SOFA_build%\cmake\SofaCommonConfig.cmake;%SOFA_build%\cmake\SofaBaseConfigVersion.cmake;%SOFA_build%\cmake\SofaBaseConfig.cmake;%SOFA_build%\cmake\SofaSimulationConfigVersion.cmake;%SOFA_build%\cmake\SofaSimulationConfig.cmake;%SOFA_build%\cmake\SofaFrameworkConfigVersion.cmake;%SOFA_build%\cmake\SofaFrameworkConfig.cmake;%SOFA_src%\SofaFramework\SofaMacros.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakePackageConfigHelpers.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\WriteBasicConfigVersionFile.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;%SOFA_src%\SofaFramework\CMakeParseLibraryList.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;%SOFA_build%\cmake\TinyXMLConfigVersion.cmake;%SOFA_build%\cmake\TinyXMLConfig.cmake;%SOFA_build%\cmake\GTestConfigVersion.cmake;%SOFA_build%\cmake\GTestConfig.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindZLIB.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageMessage.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPNG.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindZLIB.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageMessage.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageMessage.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindGLEW.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageMessage.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindGLUT.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageMessage.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;%SOFA_build%\cmake\NewmatConfigVersion.cmake;%SOFA_build%\cmake\NewmatConfig.cmake;%SOFA_build%\cmake\CSparseConfigVersion.cmake;%SOFA_build%\cmake\CSparseConfig.cmake;%SOFA_build%\cmake\MiniFlowVRConfigVersion.cmake;%SOFA_build%\cmake\MiniFlowVRConfig.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindQt4.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CheckCXXSymbolExists.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CheckSymbolExists.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\MacroAddFileDependencies.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\FindPackageMessage.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakeParseArguments.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\CMakePushCheckState.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\Qt4ConfigDependentSettings.cmake;D:\tools\Development\cmake-3.3.1-win32-x86\share\cmake-3.3\Modules\Qt4Macros.cmake;%SOFA_build%\cmake\QGLViewerConfigVersion.cmake;%SOFA_build%\cmake\QGLViewerConfig.cmake;%SOFA_src%\applications\tutorials\oneTetrahedron\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%SOFA_build%\applications\tutorials\oneTetrahedron\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\glut.cpp" />
-    <ClCompile Include="..\main.cpp" />
+    <ClCompile Include="..\main.txt" />
+    <ClCompile Include="..\oneTetrahedron.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="%SOFA_build%/extlibs/QGLViewer/QGLViewer.vcxproj">
+      <Project>31BF848D-613C-4F6A-A7A5-D8C19EF2E044</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaBase/SofaBaseAnimationLoop/SofaBaseAnimationLoop.vcxproj">
+      <Project>47259E2C-6CC2-4ABF-A846-C8E23A3F6B0D</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaBase/SofaBaseCollision/SofaBaseCollision.vcxproj">
+      <Project>6732D91D-9E43-4F79-94FC-DED04A998034</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaBase/SofaBaseLinearSolver/SofaBaseLinearSolver.vcxproj">
+      <Project>7B2D6665-AE6E-4C2A-8FF1-89A533E63278</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaBase/SofaBaseMechanics/SofaBaseMechanics.vcxproj">
+      <Project>65C11926-C4AA-40D8-8846-217320F0FC59</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaBase/SofaBaseTopology/SofaBaseTopology.vcxproj">
+      <Project>BB99A807-3DD8-4B74-A4A9-1ED724F1B509</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaBase/SofaBaseVisual/SofaBaseVisual.vcxproj">
+      <Project>B6FAD561-D57B-4F1A-A21F-BA464CB988F0</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaBoundaryCondition/SofaBoundaryCondition.vcxproj">
+      <Project>ACD45B3C-F142-4182-8973-47EBC628DB9E</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaAdvanced/SofaComponentAdvanced/SofaComponentAdvanced.vcxproj">
+      <Project>0487C940-E054-4D9F-87B0-266A8C9762BE</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaBase/SofaComponentBase/SofaComponentBase.vcxproj">
+      <Project>CD104D53-FE39-46D7-A9E3-47D49EAE75AE</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaCommon/SofaComponentCommon/SofaComponentCommon.vcxproj">
+      <Project>1836ACA0-3785-4949-96DC-95875A07FB10</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaComponentGeneral/SofaComponentGeneral.vcxproj">
+      <Project>A83DC024-D724-4B94-9CC1-646B36BAC48B</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaMisc/SofaComponentMisc/SofaComponentMisc.vcxproj">
+      <Project>D99B112E-98B0-4775-A3FA-E4254353A939</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaConstraint/SofaConstraint.vcxproj">
+      <Project>C7755D5F-87FF-4967-B133-5301199E8A8A</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaFramework/SofaCore/SofaCore.vcxproj">
+      <Project>597098F7-9382-4080-BB10-EF54BEB06E7A</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaFramework/SofaDefaultType/SofaDefaultType.vcxproj">
+      <Project>90BFCAB3-35F5-4F26-B9B7-59221EF95105</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaCommon/SofaDeformable/SofaDeformable.vcxproj">
+      <Project>BA1ABC25-59E1-4A93-BC7A-880471BED9DD</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaDenseSolver/SofaDenseSolver.vcxproj">
+      <Project>29240C6A-5A46-45EB-819E-9DA6C42E8A18</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaEigen2Solver/SofaEigen2Solver.vcxproj">
+      <Project>EA408616-10D6-46CF-96F2-1B48FE371C8A</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaEngine/SofaEngine.vcxproj">
+      <Project>21A537BC-48F7-4605-B393-489B6182A7E5</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaAdvanced/SofaEulerianFluid/SofaEulerianFluid.vcxproj">
+      <Project>00500660-4501-4852-A0D9-125A6B2DF6DA</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaCommon/SofaExplicitOdeSolver/SofaExplicitOdeSolver.vcxproj">
+      <Project>DDA31FD3-2C30-4C87-9D4D-68B455F35584</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaExporter/SofaExporter.vcxproj">
+      <Project>68F33F89-8A75-44F9-9671-6E41CA7FED70</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaGraphComponent/SofaGraphComponent.vcxproj">
+      <Project>E2BCDB90-9C80-4722-A820-97DEE13CAA0F</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaGui/SofaGuiCommon/SofaGuiCommon.vcxproj">
+      <Project>688254AF-8C91-4037-A165-29DDCC85DB6A</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaGui/SofaGuiGlut/SofaGuiGlut.vcxproj">
+      <Project>B7FEBDD8-8738-4B16-9500-C0364415476B</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaGui/SofaGuiMain/SofaGuiMain.vcxproj">
+      <Project>013118A1-6727-4372-837A-EBFFB874AE32</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaGui/SofaGuiQt/SofaGuiQt.vcxproj">
+      <Project>C2D4FF27-F148-46B5-96A6-F93DA4DA3EA0</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaHaptics/SofaHaptics.vcxproj">
+      <Project>4914818A-0C3E-4FA8-97D9-C4C997BCFCB0</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaFramework/SofaHelper/SofaHelper.vcxproj">
+      <Project>74EB09EB-6BD7-4D3B-A37C-1F19C5BE5B00</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaCommon/SofaImplicitOdeSolver/SofaImplicitOdeSolver.vcxproj">
+      <Project>25904811-042D-47AC-8F6F-FB5437DB95D1</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaCommon/SofaLoader/SofaLoader.vcxproj">
+      <Project>E918604B-4802-46D2-A5D1-4A789106889E</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaCommon/SofaMeshCollision/SofaMeshCollision.vcxproj">
+      <Project>D3E5D649-741B-4B61-B350-B8905C0FD1F3</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaMisc/SofaMisc/SofaMisc.vcxproj">
+      <Project>D3FD4FE7-5113-4221-9ACD-815087536494</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaMisc/SofaMiscCollision/SofaMiscCollision.vcxproj">
+      <Project>47A28710-C10B-41A9-A1D6-6D11486C38E4</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaMisc/SofaMiscEngine/SofaMiscEngine.vcxproj">
+      <Project>B2B1247B-9437-4FAF-B300-1E8B11B52E22</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaMisc/SofaMiscFem/SofaMiscFem.vcxproj">
+      <Project>A5E74051-6FC6-4F0F-9D37-D57E26CAB980</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaMisc/SofaMiscForceField/SofaMiscForceField.vcxproj">
+      <Project>BEDD8C5B-51FB-494E-A046-F2D4A4A1E0BF</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaMisc/SofaMiscMapping/SofaMiscMapping.vcxproj">
+      <Project>6A232E44-FA9A-4A4C-86AC-616C3C2BCAB8</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaMisc/SofaMiscSolver/SofaMiscSolver.vcxproj">
+      <Project>380EEA8A-64DD-445E-9840-A5B26E98F1E8</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaMisc/SofaMiscTopology/SofaMiscTopology.vcxproj">
+      <Project>48F18CE6-6CEB-4083-B646-6394335A3B89</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaAdvanced/SofaNonUniformFem/SofaNonUniformFem.vcxproj">
+      <Project>6EB3FA88-99E2-45D7-8183-E5BFDFA908D0</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaCommon/SofaObjectInteraction/SofaObjectInteraction.vcxproj">
+      <Project>30D7CB2D-8385-42C5-83EC-7BD1CC2C00D4</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaOpenglVisual/SofaOpenglVisual.vcxproj">
+      <Project>F6B4BFA6-D1F0-4724-A1E7-68998395A309</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaPreconditioner/SofaPreconditioner.vcxproj">
+      <Project>70DC8B20-A256-4A6B-9D18-52F6DEEA9030</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaCommon/SofaRigid/SofaRigid.vcxproj">
+      <Project>69D83B3D-91C0-4DBE-A142-0A8C1EB62267</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaCommon/SofaSimpleFem/SofaSimpleFem.vcxproj">
+      <Project>DF70C10C-CAB1-444E-A46E-33BD387FDA25</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaSimulation/SofaSimulationCommon/SofaSimulationCommon.vcxproj">
+      <Project>ADF79CE9-0DE4-402A-8B19-AA6A6EA8EDDA</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaSimulation/SofaSimulationTree/SofaSimulationTree.vcxproj">
+      <Project>D7A9E8A2-DADE-4848-990C-D0FEE9D5DCFD</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaSparseSolver/SofaSparseSolver.vcxproj">
+      <Project>C92E4562-35CA-4E39-AD01-AF28D45CB073</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaAdvanced/SofaSphFluid/SofaSphFluid.vcxproj">
+      <Project>CB1952D3-8087-4483-A636-2B37A2CD64F8</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaTopologyMapping/SofaTopologyMapping.vcxproj">
+      <Project>63C8D4BB-5E17-4598-9D54-4A3E46F8CF5E</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaUserInteraction/SofaUserInteraction.vcxproj">
+      <Project>0DFCD5F2-CABC-4A45-9F00-E26F38F2B45B</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaGeneral/SofaValidation/SofaValidation.vcxproj">
+      <Project>E87570B1-A5DB-45B7-88BB-50B4E0E25D32</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/SofaAdvanced/SofaVolumetricData/SofaVolumetricData.vcxproj">
+      <Project>97BA6167-136E-45A4-8D17-03A67A44F8D2</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/ZERO_CHECK.vcxproj">
+      <Project>4B331207-60BB-4CA8-9016-E7F731F54BF8</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/extlibs/csparse/csparse.vcxproj">
+      <Project>F3F2DFC0-3284-4F10-82E4-04D7A7784A1D</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/extlibs/miniFlowVR/miniFlowVR.vcxproj">
+      <Project>41B67F44-74BB-4502-A4C1-CBEE4A6E3464</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/extlibs/newmat/newmat.vcxproj">
+      <Project>4BE744EA-28A2-4F9E-AEFD-732D85E3F89C</Project>
+    </ProjectReference>
+    <ProjectReference Include="%SOFA_build%/extlibs/tinyxml/tinyxml.vcxproj">
+      <Project>B8171694-A8B2-40BC-97AA-E884D1656E90</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

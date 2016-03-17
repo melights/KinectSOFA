@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F9500071-962F-41CA-A7BC-CCC2F74203B5}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>KinectSOFA</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions> /bigobj %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>D:\Research\SOFA\sofa_32\include;D:\Research\SOFA\sofa\v15.12\src\SofaGui\..\applications;D:\Research\SOFA\sofa\v15.12\src\SofaGeneral\..\modules;D:\Research\SOFA\sofa\v15.12\src\SofaSimulation\..\modules;D:\Research\SOFA\sofa\v15.12\src\framework\sofa\core\..\..;D:\Research\SOFA\sofa\v15.12\src\framework\sofa\defaulttype\..\..;D:\Research\SOFA\sofa\v15.12\src\framework\sofa\helper\..\..;D:\Research\SOFA\sofa\v15.12\src\include;D:\Research\SOFA\sofa\v15.12\src\extlibs\miniBoost;D:\Research\SOFA\sofa\v15.12\src\extlibs\eigen-3.2.7;D:\Research\SOFA\sofa_32\SofaFramework;D:\Research\SOFA\sofa\v15.12\src\extlibs\tinyxml;D:\Research\SOFA\sofa\v15.12\src\SofaBase\..\modules;D:\Research\SOFA\sofa\v15.12\src\SofaCommon\..\modules;D:\Research\SOFA\sofa\v15.12\src\extlibs\csparse;D:\Research\SOFA\sofa\v15.12\src\extlibs\newmat;D:\Research\SOFA\sofa\v15.12\src\SofaAdvanced\..\modules;D:\Research\SOFA\sofa\v15.12\src\extlibs\miniFlowVR\include;D:\Research\SOFA\sofa\v15.12\src\SofaMisc\..\modules;D:\Research\SOFA\sofa_32\SofaGui\SofaGuiQt;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtCore;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\mkspecs\default;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtGui;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtOpenGL;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtXml;D:\Research\SOFA\sofa\v15.12\src\extlibs\libQGLViewer-2.6.3\QGLViewer\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4250;4251;4275;4675;4996</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;SOFA_DEBUG;UNICODE;_USE_MATH_DEFINES;BOOST_ALL_DYN_LINK;EIGEN_DONT_ALIGN;QT_CORE_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_XML_LIB;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;SOFA_DEBUG;UNICODE;_USE_MATH_DEFINES;BOOST_ALL_DYN_LINK;EIGEN_DONT_ALIGN;QT_CORE_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_XML_LIB;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Research\SOFA\sofa_32\include;D:\Research\SOFA\sofa\v15.12\src\SofaGui\..\applications;D:\Research\SOFA\sofa\v15.12\src\SofaGeneral\..\modules;D:\Research\SOFA\sofa\v15.12\src\SofaSimulation\..\modules;D:\Research\SOFA\sofa\v15.12\src\framework\sofa\core\..\..;D:\Research\SOFA\sofa\v15.12\src\framework\sofa\defaulttype\..\..;D:\Research\SOFA\sofa\v15.12\src\framework\sofa\helper\..\..;D:\Research\SOFA\sofa\v15.12\src\include;D:\Research\SOFA\sofa\v15.12\src\extlibs\miniBoost;D:\Research\SOFA\sofa\v15.12\src\extlibs\eigen-3.2.7;D:\Research\SOFA\sofa_32\SofaFramework;D:\Research\SOFA\sofa\v15.12\src\extlibs\tinyxml;D:\Research\SOFA\sofa\v15.12\src\SofaBase\..\modules;D:\Research\SOFA\sofa\v15.12\src\SofaCommon\..\modules;D:\Research\SOFA\sofa\v15.12\src\extlibs\csparse;D:\Research\SOFA\sofa\v15.12\src\extlibs\newmat;D:\Research\SOFA\sofa\v15.12\src\SofaAdvanced\..\modules;D:\Research\SOFA\sofa\v15.12\src\extlibs\miniFlowVR\include;D:\Research\SOFA\sofa\v15.12\src\SofaMisc\..\modules;D:\Research\SOFA\sofa_32\SofaGui\SofaGuiQt;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtCore;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\mkspecs\default;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtGui;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtOpenGL;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtXml;D:\Research\SOFA\sofa\v15.12\src\extlibs\libQGLViewer-2.6.3\QGLViewer\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Research\SOFA\sofa_32\include;D:\Research\SOFA\sofa\v15.12\src\SofaGui\..\applications;D:\Research\SOFA\sofa\v15.12\src\SofaGeneral\..\modules;D:\Research\SOFA\sofa\v15.12\src\SofaSimulation\..\modules;D:\Research\SOFA\sofa\v15.12\src\framework\sofa\core\..\..;D:\Research\SOFA\sofa\v15.12\src\framework\sofa\defaulttype\..\..;D:\Research\SOFA\sofa\v15.12\src\framework\sofa\helper\..\..;D:\Research\SOFA\sofa\v15.12\src\include;D:\Research\SOFA\sofa\v15.12\src\extlibs\miniBoost;D:\Research\SOFA\sofa\v15.12\src\extlibs\eigen-3.2.7;D:\Research\SOFA\sofa_32\SofaFramework;D:\Research\SOFA\sofa\v15.12\src\extlibs\tinyxml;D:\Research\SOFA\sofa\v15.12\src\SofaBase\..\modules;D:\Research\SOFA\sofa\v15.12\src\SofaCommon\..\modules;D:\Research\SOFA\sofa\v15.12\src\extlibs\csparse;D:\Research\SOFA\sofa\v15.12\src\extlibs\newmat;D:\Research\SOFA\sofa\v15.12\src\SofaAdvanced\..\modules;D:\Research\SOFA\sofa\v15.12\src\extlibs\miniFlowVR\include;D:\Research\SOFA\sofa\v15.12\src\SofaMisc\..\modules;D:\Research\SOFA\sofa_32\SofaGui\SofaGuiQt;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtCore;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\mkspecs\default;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtGui;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtOpenGL;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtXml;D:\Research\SOFA\sofa\v15.12\src\extlibs\libQGLViewer-2.6.3\QGLViewer\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 /debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\..\lib\Debug\SofaGuiMain_d.lib;..\..\..\lib\Debug\SofaGuiGlut_d.lib;..\..\..\lib\Debug\SofaGuiQt_d.lib;..\..\..\lib\Debug\SofaGuiCommon_d.lib;..\..\..\lib\Debug\SofaComponentBase_d.lib;..\..\..\lib\Debug\SofaBaseAnimationLoop_d.lib;..\..\..\lib\Debug\SofaComponentCommon_d.lib;..\..\..\lib\Debug\SofaComponentGeneral_d.lib;..\..\..\lib\Debug\SofaEngine_d.lib;..\..\..\lib\Debug\SofaHaptics_d.lib;..\..\..\lib\Debug\SofaPreconditioner_d.lib;..\..\..\lib\Debug\SofaSparseSolver_d.lib;..\..\..\lib\Debug\csparse_d.lib;..\..\..\lib\Debug\SofaValidation_d.lib;..\..\..\lib\Debug\SofaComponentAdvanced_d.lib;..\..\..\lib\Debug\SofaEulerianFluid_d.lib;..\..\..\lib\Debug\SofaComponentMisc_d.lib;..\..\..\lib\Debug\SofaMisc_d.lib;..\..\..\lib\Debug\SofaMiscCollision_d.lib;..\..\..\lib\Debug\SofaExplicitOdeSolver_d.lib;..\..\..\lib\Debug\SofaConstraint_d.lib;..\..\..\lib\Debug\SofaImplicitOdeSolver_d.lib;..\..\..\lib\Debug\SofaSphFluid_d.lib;..\..\..\lib\Debug\SofaVolumetricData_d.lib;..\..\..\lib\Debug\SofaUserInteraction_d.lib;..\..\..\lib\Debug\SofaGraphComponent_d.lib;..\..\..\lib\Debug\SofaTopologyMapping_d.lib;..\..\..\lib\Debug\SofaMeshCollision_d.lib;..\..\..\lib\Debug\SofaBaseCollision_d.lib;..\..\..\lib\Debug\SofaObjectInteraction_d.lib;..\..\..\lib\Debug\miniFlowVR_d.lib;..\..\..\lib\Debug\SofaMiscEngine_d.lib;..\..\..\lib\Debug\SofaNonUniformFem_d.lib;..\..\..\lib\Debug\SofaDenseSolver_d.lib;..\..\..\lib\Debug\SofaMiscFem_d.lib;..\..\..\lib\Debug\newmat_d.lib;..\..\..\lib\Debug\SofaMiscMapping_d.lib;..\..\..\lib\Debug\SofaRigid_d.lib;..\..\..\lib\Debug\SofaBaseMechanics_d.lib;..\..\..\lib\Debug\SofaSimpleFem_d.lib;..\..\..\lib\Debug\SofaMiscSolver_d.lib;..\..\..\lib\Debug\SofaExporter_d.lib;..\..\..\lib\Debug\SofaLoader_d.lib;..\..\..\lib\Debug\SofaSimulationTree_d.lib;..\..\..\lib\Debug\SofaOpenglVisual_d.lib;..\..\..\lib\Debug\SofaBaseVisual_d.lib;..\..\..\lib\Debug\SofaMiscForceField_d.lib;..\..\..\lib\Debug\SofaDeformable_d.lib;..\..\..\lib\Debug\SofaBoundaryCondition_d.lib;..\..\..\lib\Debug\SofaEigen2Solver_d.lib;..\..\..\lib\Debug\SofaBaseLinearSolver_d.lib;..\..\..\lib\Debug\SofaMiscTopology_d.lib;..\..\..\lib\Debug\SofaBaseTopology_d.lib;..\..\..\lib\Debug\SofaSimulationCommon_d.lib;..\..\..\lib\Debug\SofaCore_d.lib;..\..\..\lib\Debug\SofaDefaultType_d.lib;..\..\..\lib\Debug\SofaHelper_d.lib;D:\Research\SOFA\sofa\v15.12\src\lib\win32\glew32.lib;D:\Research\SOFA\sofa\v15.12\src\lib\win32\glut32.lib;..\..\..\lib\Debug\tinyxml_d.lib;D:\Research\SOFA\sofa\v15.12\src\lib\win32\zlib.lib;D:\Research\SOFA\sofa\v15.12\src\lib\win32\libpng.lib;..\..\..\lib\Debug\QGLViewer_d.lib;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\lib\QtOpenGLd4.lib;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\lib\QtGuid4.lib;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\lib\QtXmld4.lib;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\lib\QtCored4.lib;glu32.lib;opengl32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Research/SOFA/sofa_32/lib/Debug/oneTetrahedron.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Research/SOFA/sofa_32/bin/Debug/oneTetrahedron.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(KINECTSDK10_DIR)\lib\x86;D:\Research\Dependency\freeglut\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kinect10.lib;glut32.lib;freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions> /bigobj %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(KINECTSDK10_DIR)\inc;..\;D:\Research\SOFA\sofa_32\include;D:\Research\SOFA\sofa\v15.12\src\SofaGui\..\applications;D:\Research\SOFA\sofa\v15.12\src\SofaGeneral\..\modules;D:\Research\SOFA\sofa\v15.12\src\SofaSimulation\..\modules;D:\Research\SOFA\sofa\v15.12\src\framework\sofa\core\..\..;D:\Research\SOFA\sofa\v15.12\src\framework\sofa\defaulttype\..\..;D:\Research\SOFA\sofa\v15.12\src\framework\sofa\helper\..\..;D:\Research\SOFA\sofa\v15.12\src\include;D:\Research\SOFA\sofa\v15.12\src\extlibs\miniBoost;D:\Research\SOFA\sofa\v15.12\src\extlibs\eigen-3.2.7;D:\Research\SOFA\sofa_32\SofaFramework;D:\Research\SOFA\sofa\v15.12\src\extlibs\tinyxml;D:\Research\SOFA\sofa\v15.12\src\SofaBase\..\modules;D:\Research\SOFA\sofa\v15.12\src\SofaCommon\..\modules;D:\Research\SOFA\sofa\v15.12\src\extlibs\csparse;D:\Research\SOFA\sofa\v15.12\src\extlibs\newmat;D:\Research\SOFA\sofa\v15.12\src\SofaAdvanced\..\modules;D:\Research\SOFA\sofa\v15.12\src\extlibs\miniFlowVR\include;D:\Research\SOFA\sofa\v15.12\src\SofaMisc\..\modules;D:\Research\SOFA\sofa_32\SofaGui\SofaGuiQt;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtCore;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\mkspecs\default;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtGui;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtOpenGL;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtXml;D:\Research\SOFA\sofa\v15.12\src\extlibs\libQGLViewer-2.6.3\QGLViewer\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4250;4251;4275;4675;4996</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;UNICODE;_USE_MATH_DEFINES;BOOST_ALL_DYN_LINK;EIGEN_DONT_ALIGN;QT_CORE_LIB;QT_NO_DEBUG;QT_GUI_LIB;QT_OPENGL_LIB;QT_XML_LIB;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;UNICODE;_USE_MATH_DEFINES;BOOST_ALL_DYN_LINK;EIGEN_DONT_ALIGN;QT_CORE_LIB;QT_NO_DEBUG;QT_GUI_LIB;QT_OPENGL_LIB;QT_XML_LIB;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Research\SOFA\sofa_32\include;D:\Research\SOFA\sofa\v15.12\src\SofaGui\..\applications;D:\Research\SOFA\sofa\v15.12\src\SofaGeneral\..\modules;D:\Research\SOFA\sofa\v15.12\src\SofaSimulation\..\modules;D:\Research\SOFA\sofa\v15.12\src\framework\sofa\core\..\..;D:\Research\SOFA\sofa\v15.12\src\framework\sofa\defaulttype\..\..;D:\Research\SOFA\sofa\v15.12\src\framework\sofa\helper\..\..;D:\Research\SOFA\sofa\v15.12\src\include;D:\Research\SOFA\sofa\v15.12\src\extlibs\miniBoost;D:\Research\SOFA\sofa\v15.12\src\extlibs\eigen-3.2.7;D:\Research\SOFA\sofa_32\SofaFramework;D:\Research\SOFA\sofa\v15.12\src\extlibs\tinyxml;D:\Research\SOFA\sofa\v15.12\src\SofaBase\..\modules;D:\Research\SOFA\sofa\v15.12\src\SofaCommon\..\modules;D:\Research\SOFA\sofa\v15.12\src\extlibs\csparse;D:\Research\SOFA\sofa\v15.12\src\extlibs\newmat;D:\Research\SOFA\sofa\v15.12\src\SofaAdvanced\..\modules;D:\Research\SOFA\sofa\v15.12\src\extlibs\miniFlowVR\include;D:\Research\SOFA\sofa\v15.12\src\SofaMisc\..\modules;D:\Research\SOFA\sofa_32\SofaGui\SofaGuiQt;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtCore;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\mkspecs\default;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtGui;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtOpenGL;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtXml;D:\Research\SOFA\sofa\v15.12\src\extlibs\libQGLViewer-2.6.3\QGLViewer\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Research\SOFA\sofa_32\include;D:\Research\SOFA\sofa\v15.12\src\SofaGui\..\applications;D:\Research\SOFA\sofa\v15.12\src\SofaGeneral\..\modules;D:\Research\SOFA\sofa\v15.12\src\SofaSimulation\..\modules;D:\Research\SOFA\sofa\v15.12\src\framework\sofa\core\..\..;D:\Research\SOFA\sofa\v15.12\src\framework\sofa\defaulttype\..\..;D:\Research\SOFA\sofa\v15.12\src\framework\sofa\helper\..\..;D:\Research\SOFA\sofa\v15.12\src\include;D:\Research\SOFA\sofa\v15.12\src\extlibs\miniBoost;D:\Research\SOFA\sofa\v15.12\src\extlibs\eigen-3.2.7;D:\Research\SOFA\sofa_32\SofaFramework;D:\Research\SOFA\sofa\v15.12\src\extlibs\tinyxml;D:\Research\SOFA\sofa\v15.12\src\SofaBase\..\modules;D:\Research\SOFA\sofa\v15.12\src\SofaCommon\..\modules;D:\Research\SOFA\sofa\v15.12\src\extlibs\csparse;D:\Research\SOFA\sofa\v15.12\src\extlibs\newmat;D:\Research\SOFA\sofa\v15.12\src\SofaAdvanced\..\modules;D:\Research\SOFA\sofa\v15.12\src\extlibs\miniFlowVR\include;D:\Research\SOFA\sofa\v15.12\src\SofaMisc\..\modules;D:\Research\SOFA\sofa_32\SofaGui\SofaGuiQt;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtCore;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\mkspecs\default;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtGui;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtOpenGL;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\include\QtXml;D:\Research\SOFA\sofa\v15.12\src\extlibs\libQGLViewer-2.6.3\QGLViewer\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kinect10.lib;freeglut.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;%SOFA_build%\lib\Release\SofaGuiMain.lib;%SOFA_build%\lib\Release\SofaGuiGlut.lib;%SOFA_build%\lib\Release\SofaGuiQt.lib;%SOFA_build%\lib\Release\SofaGuiCommon.lib;%SOFA_build%\lib\Release\SofaComponentBase.lib;%SOFA_build%\lib\Release\SofaBaseAnimationLoop.lib;%SOFA_build%\lib\Release\SofaComponentCommon.lib;%SOFA_build%\lib\Release\SofaComponentGeneral.lib;%SOFA_build%\lib\Release\SofaEngine.lib;%SOFA_build%\lib\Release\SofaHaptics.lib;%SOFA_build%\lib\Release\SofaPreconditioner.lib;%SOFA_build%\lib\Release\SofaSparseSolver.lib;%SOFA_build%\lib\Release\csparse.lib;%SOFA_build%\lib\Release\SofaValidation.lib;%SOFA_build%\lib\Release\SofaComponentAdvanced.lib;%SOFA_build%\lib\Release\SofaEulerianFluid.lib;%SOFA_build%\lib\Release\SofaComponentMisc.lib;%SOFA_build%\lib\Release\SofaMisc.lib;%SOFA_build%\lib\Release\SofaMiscCollision.lib;%SOFA_build%\lib\Release\SofaExplicitOdeSolver.lib;%SOFA_build%\lib\Release\SofaConstraint.lib;%SOFA_build%\lib\Release\SofaImplicitOdeSolver.lib;%SOFA_build%\lib\Release\SofaSphFluid.lib;%SOFA_build%\lib\Release\SofaVolumetricData.lib;%SOFA_build%\lib\Release\SofaUserInteraction.lib;%SOFA_build%\lib\Release\SofaGraphComponent.lib;%SOFA_build%\lib\Release\SofaTopologyMapping.lib;%SOFA_build%\lib\Release\SofaMeshCollision.lib;%SOFA_build%\lib\Release\SofaBaseCollision.lib;%SOFA_build%\lib\Release\SofaObjectInteraction.lib;%SOFA_build%\lib\Release\miniFlowVR.lib;%SOFA_build%\lib\Release\SofaMiscEngine.lib;%SOFA_build%\lib\Release\SofaNonUniformFem.lib;%SOFA_build%\lib\Release\SofaDenseSolver.lib;%SOFA_build%\lib\Release\SofaMiscFem.lib;%SOFA_build%\lib\Release\newmat.lib;%SOFA_build%\lib\Release\SofaMiscMapping.lib;%SOFA_build%\lib\Release\SofaRigid.lib;%SOFA_build%\lib\Release\SofaBaseMechanics.lib;%SOFA_build%\lib\Release\SofaSimpleFem.lib;%SOFA_build%\lib\Release\SofaMiscSolver.lib;%SOFA_build%\lib\Release\SofaExporter.lib;%SOFA_build%\lib\Release\SofaLoader.lib;%SOFA_build%\lib\Release\SofaSimulationTree.lib;%SOFA_build%\lib\Release\SofaOpenglVisual.lib;%SOFA_build%\lib\Release\SofaBaseVisual.lib;%SOFA_build%\lib\Release\SofaMiscForceField.lib;%SOFA_build%\lib\Release\SofaDeformable.lib;%SOFA_build%\lib\Release\SofaBoundaryCondition.lib;%SOFA_build%\lib\Release\SofaEigen2Solver.lib;%SOFA_build%\lib\Release\SofaBaseLinearSolver.lib;%SOFA_build%\lib\Release\SofaMiscTopology.lib;%SOFA_build%\lib\Release\SofaBaseTopology.lib;%SOFA_build%\lib\Release\SofaSimulationCommon.lib;%SOFA_build%\lib\Release\SofaCore.lib;%SOFA_build%\lib\Release\SofaDefaultType.lib;%SOFA_build%\lib\Release\SofaHelper.lib;D:\Research\SOFA\sofa\v15.12\src\lib\win32\glew32.lib;D:\Research\SOFA\sofa\v15.12\src\lib\win32\glut32.lib;%SOFA_build%\lib\Release\tinyxml.lib;D:\Research\SOFA\sofa\v15.12\src\lib\win32\zlib.lib;D:\Research\SOFA\sofa\v15.12\src\lib\win32\libpng.lib;%SOFA_build%\lib\Release\QGLViewer.lib;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\lib\QtOpenGL4.lib;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\lib\QtGui4.lib;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\lib\QtXml4.lib;D:\Research\SOFA\qt4.8.5_msvc2012_x86\tools\qt4win\lib\QtCore4.lib;glu32.lib;opengl32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(KINECTSDK10_DIR)\lib\x86;..\GL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Research/SOFA/sofa_32/lib/Release/oneTetrahedron.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Research/SOFA/sofa_32/bin/Release/oneTetrahedron.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\glut.h" />
+    <ClInclude Include="..\main.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\glut.cpp" />
+    <ClCompile Include="..\main.cpp" />
+    <ClCompile Include="..\oneTetrahedron.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
